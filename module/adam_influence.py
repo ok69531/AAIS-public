@@ -38,6 +38,7 @@ def compute_lin_batch_grad(model, batch, criterion):
     y = batch.y.view(pred.shape)
     is_labeled = y==y
     loss = criterion(pred.to(torch.float32)[is_labeled], y.to(torch.float32)[is_labeled])
+    loss = loss / torch.sum(is_labeled)
     
     return torch.autograd.grad(loss, list(model.graph_pred_linear.parameters()))
 
