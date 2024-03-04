@@ -36,6 +36,7 @@ python main.py --args.dataset=bbbp --args.train_type=aais --args.ratio=0.5 --arg
 │   └── train.py
 ├── main.py
 ├── requirements.txt
+├── example.ipynb
 ├── README.md
 └── .gitignore
 ```
@@ -47,3 +48,4 @@ python main.py --args.dataset=bbbp --args.train_type=aais --args.ratio=0.5 --arg
 - module/train.py: training/inference functions
 - main.py: script for taining
 - requirements.txt: Dependencies for this repository
+- example.ipynb: Tutorial for implementation AAIS
