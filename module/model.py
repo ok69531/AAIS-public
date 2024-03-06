@@ -1,3 +1,4 @@
+# source code from https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/mol
 import enum
 from multiprocessing.sharedctypes import Value
 import torch
