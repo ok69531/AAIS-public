@@ -1,5 +1,5 @@
 # AAIS
-Source code for Adaptive Adversarial Augmentation for Molecular Property Prediction with pytorch.
+Source code for Adaptive Adversarial Augmentation for Molecular Property Prediction with pytorch and torch_geometric.
 
 
 ## Requiremets & Installation
@@ -25,7 +25,7 @@ The default setting specifies GCN as the GNN type, a burn-in period of 20, and S
 In our repository, we support two GNN types (GCN and GIN), and two optimizers (SGD and Adam).
 
 We have consdiered subsampling ratio $r$ of {0, 0.1, 0.3, 0.5, 0.7, 0.9, 1}. Additionally, $r$ can be adjusted to any desired value between 0 and 1. When $r=0$, it implies training without data augmentation, setting the train_type argument to 'base'. Conversely, when $r=1$, it denotes applying adversarial augmentation to all data, setting the train_type argument to 'aa'.
-More detained arguments are summarized in [argument.py](module/argument.py).
+More detailed arguments are summarized in [argument.py](module/argument.py).
 
 ### Version 1: Training with the fixed subsampling ratio $r$:
 ```python
@@ -39,12 +39,12 @@ python main.py --dataset=bbbp --train_type=aais --ratio=0.5
 python main.py --dataset=bbbp --train_type=aa
 ```
 
-If you want to add virtual node,
+If you want to add a virtual node,
 ```python 
 python main.py --virtual=True --dataset=bbbp -train_type=aais --ratio=0.5
 ```
 
-If you have problem with DataLoader, 
+If you have a problem with DataLoader, 
 ```python
 python main.py --dataset=bbbp --num_workers=0
 ```
