@@ -2,13 +2,13 @@
 Source code for Adaptive Adversarial Augmentation for Molecular Property Prediction with pytorch and torch_geometric.
 
 
-## Requiremets & Installation
-The code is written in Python 3 (>= 3.9.0) and supports both GPU with cuda 11.3 and CPU on Windows. MacOSX is only supported on the CPU.
+## Requirements & Installation
+The code is written in Python 3 (>= 3.9.0) and supports both GPU and CPU on Windows. MacOSX is only supported on the CPU.
 
 1. Clone the Git repository.
 2. Install a compatible version of Python and make an environment.
 ```
-conda create -n aais ptyhon=3.9.0
+conda create -n aais python=3.9.0
 conda activate aais
 ```
 3. Install the dependencies from the requirements file. 
