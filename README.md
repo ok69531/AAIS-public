@@ -18,10 +18,42 @@ pip install -r requirements.txt
 
 
 ## Basic Usage
-Training using AAIS with the subsampling ratio $r$ of 0.5:
+We use the seven binary classification benchmark datasets included in [OGB](https://github.com/snap-stanford/ogb): BBBP, CLINTOX, SIDER, HIV, BACE, TOX21, and TOXCAST.
+The primary considerations in training include dataset, GNN type (gnn_type), optimizer (optim_method), train_type, and burn-in period.
+
+The default setting specifies GCN as the GNN type, a burn-in period of 20, and SGD as the optimizer. 
+In our repository, we support two GNN types (GCN and GIN), and two optimizers (SGD and Adam).
+
+We have consdiered subsampling ratio $r$ of {0, 0.1, 0.3, 0.5, 0.7, 0.9, 1}. Additionally, $r$ can be adjusted to any desired value between 0 and 1. When $r=0$, it implies training without data augmentation, setting the train_type argument to 'base'. Conversely, when $r=1$, it denotes applying adversarial augmentation to all data, setting the train_type argument to 'aa'.
+More detained arguments are summarized in [argument.py](module/argument.py).
+
+### Version 1: Training with the fixed subsampling ratio $r$:
+```python
+# without augmentation (r = 0) 
+python main.py --dataset=bbbp --train_type=base
+
+# r = 0.5 
+python main.py --dataset=bbbp --train_type=aais --ratio=0.5
+
+# r = 1
+python main.py --dataset=bbbp --train_type=aa
 ```
-python main.py --args.dataset=bbbp --args.train_type=aais --args.ratio=0.5 --args.optim_method=sgd
+
+If you want to add virtual node,
+```python 
+python main.py --virtual=True --dataset=bbbp -train_type=aais --ratio=0.5
 ```
+
+If you have problem with DataLoader, 
+```python
+python main.py --dataset=bbbp --num_workers=0
+```
+
+### Version 2: Tuning the subsampling ratio $r$ during training:
+``` python
+python main_tuned.py --dataset=bbbp
+```
+Considering the potentially significant computational time required, it is recommended to carry out this procedure on a powerful server, especially when handling HIV, TOX21, and TOXCAST datasets.
 
 
 ## Components
@@ -35,6 +67,7 @@ python main.py --args.dataset=bbbp --args.train_type=aais --args.ratio=0.5 --arg
 │   ├── model.py
 │   └── train.py
 ├── main.py
+├── main_tuned.py
 ├── requirements.txt
 ├── example.ipynb
 ├── README.md
@@ -44,8 +77,9 @@ python main.py --args.dataset=bbbp --args.train_type=aais --args.ratio=0.5 --arg
 - module/set_seed.py: specify the seed
 - module/sgd_influence.py: calculate the one-step influence function when using SGD optimizer
 - module/adam_influence.py: calculate the one-step influence function when using Adam optimizer
-- module/model.py: model architecture
-- module/train.py: training/inference functions
-- main.py: script for taining
-- requirements.txt: Dependencies for this repository
-- example.ipynb: Tutorial for implementation AAIS
+- module/model.py: model architectures
+- module/train.py: training/evaluation functions
+- main.py: script for training when the subsampling ratio is fixed
+- main_tuned.py: script for training with subsampling ratio tuning
+- requirements.txt: dependencies for this repository
+- example.ipynb: tutorial for implementation AAIS
