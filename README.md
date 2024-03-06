@@ -27,7 +27,7 @@ In our repository, we support two GNN types (GCN and GIN), and two optimizers (S
 We have consdiered subsampling ratio $r$ of {0, 0.1, 0.3, 0.5, 0.7, 0.9, 1}. Additionally, $r$ can be adjusted to any desired value between 0 and 1. When $r=0$, it implies training without data augmentation, setting the train_type argument to 'base'. Conversely, when $r=1$, it denotes applying adversarial augmentation to all data, setting the train_type argument to 'aa'.
 More detailed arguments are summarized in [argument.py](module/argument.py).
 
-### Version 1: Training with the fixed subsampling ratio $r$:
+- ### Version 1: Training with the fixed subsampling ratio $r$:
 ```python
 # without augmentation (r = 0) 
 python main.py --dataset=bbbp --train_type=base
@@ -49,11 +49,11 @@ If you have a problem with DataLoader,
 python main.py --dataset=bbbp --num_workers=0
 ```
 
-### Version 2: Tuning the subsampling ratio $r$ during training:
+- ### Version 2: Tuning the subsampling ratio $r$ during training:
 ``` python
 python main_tuned.py --dataset=bbbp
 ```
-Considering the potentially significant computational time required, it is recommended to carry out this procedure on a powerful server, especially when handling HIV, TOX21, and TOXCAST datasets.
+Considering the potentially significant computational time required, carrying out this procedure on a large server is recommended, especially when handling HIV, TOX21, and TOXCAST datasets.
 
 
 ## Components
