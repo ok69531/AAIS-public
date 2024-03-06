@@ -25,7 +25,7 @@ The default setting specifies GCN as the GNN type, a burn-in period of 20, and S
 In our repository, we support two GNN types (GCN and GIN), and two optimizers (SGD and Adam).
 
 We have consdiered subsampling ratio $r$ of {0, 0.1, 0.3, 0.5, 0.7, 0.9, 1}. Additionally, $r$ can be adjusted to any desired value between 0 and 1. When $r=0$, it implies training without data augmentation, setting the train_type argument to 'base'. Conversely, when $r=1$, it denotes applying adversarial augmentation to all data, setting the train_type argument to 'aa'.
-More detailed arguments are summarized in [argument.py](module/argument.py).
+More detailed arguments are summarized in [argument.py](https://github.com/ok69531/AAIS-public/blob/main/module/argument.py).
 
 - ### Version 1: Training with the fixed subsampling ratio $r$:
 ```python
