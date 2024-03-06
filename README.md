@@ -69,7 +69,7 @@ Considering the potentially significant computational time required, carrying ou
 ├── main.py
 ├── main_tuned.py
 ├── requirements.txt
-├── example.ipynb
+├── aais_example.ipynb
 ├── README.md
 └── .gitignore
 ```
@@ -82,4 +82,4 @@ Considering the potentially significant computational time required, carrying ou
 - main.py: script for training when the subsampling ratio is fixed
 - main_tuned.py: script for training with subsampling ratio tuning
 - requirements.txt: dependencies for this repository
-- example.ipynb: tutorial for implementation AAIS
+- aais_example.ipynb: tutorial for implementation AAIS on colab
