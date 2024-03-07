@@ -12,7 +12,7 @@ conda create -n aais python=3.9.0
 conda activate aais
 ```
 3. Install the dependencies from the requirements file. 
-```
+```python
 # for Mac, and Window-CPU
 pip install -r requirements.txt
 
