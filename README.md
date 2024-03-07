@@ -13,7 +13,11 @@ conda activate aais
 ```
 3. Install the dependencies from the requirements file. 
 ```
+# for Max, and Window-CPU
 pip install -r requirements.txt
+
+# for Window-GPU
+pip install -r requirements-window-cuda.txt
 ```
 
 
@@ -81,5 +85,5 @@ Considering the potentially significant computational time required, carrying ou
 - module/train.py: training/evaluation functions
 - main.py: script for training when the subsampling ratio is fixed
 - main_tuned.py: script for training with subsampling ratio tuning
-- requirements.txt: dependencies for this repository
+- requirements.txt, requirements-window-cuda.txt: dependencies for this repository
 - aais_example.ipynb: tutorial for implementation AAIS on colab
