@@ -57,7 +57,8 @@ python main.py --dataset=bbbp --num_workers=0
 ``` python
 python main_tuned.py --dataset=bbbp
 ```
-Considering the potentially significant computational time required, carrying out this procedure on a large server is recommended, especially when handling HIV, TOX21, and TOXCAST datasets.
+This procedure may be time-consuming, especially in HIV, TOX21, and TOXCAST datasets.
+<!-- Considering the potentially significant computational time required, carrying out this procedure on a large server is recommended, especially when handling HIV, TOX21, and TOXCAST datasets. -->
 
 
 ## Components
