@@ -13,7 +13,7 @@ conda activate aais
 ```
 3. Install the dependencies from the requirements file. 
 ```
-# for Max, and Window-CPU
+# for Mac, and Window-CPU
 pip install -r requirements.txt
 
 # for Window-GPU
