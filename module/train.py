@@ -1,3 +1,6 @@
+# source code from https://github.com/snap-stanford/ogb/tree/master/examples/graphproppred/mol
+# source code from https://github.com/devnkong/FLAG/blob/main/ogb/attacks.py
+
 import sys
 sys.path.append('../')
 
