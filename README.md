@@ -74,6 +74,7 @@ This procedure may be time-consuming, especially in HIV, TOX21, and TOXCAST data
 ├── main.py
 ├── main_tuned.py
 ├── requirements.txt
+├── requirements-window-cuda.txt
 ├── aais_example.ipynb
 ├── README.md
 └── .gitignore
