@@ -16,9 +16,13 @@ conda activate aais
 # for Mac, and Window-CPU
 pip install -r requirements.txt
 
-# for Window-GPU
+# for Window-GPU with cuda 11.3
 pip install -r requirements-window-cuda.txt
 ```
+Please follow the links below to install PyTorch, torch-scatter, and torch-sparse with other CUDA versions:
+- https://pytorch.org/
+- https://data.pyg.org/whl/
+
 
 
 ## Basic Usage
