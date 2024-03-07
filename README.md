@@ -3,7 +3,7 @@ Source code for Adaptive Adversarial Augmentation for Molecular Property Predict
 
 
 ## Requirements & Installation
-The code is written in Python 3 (>= 3.9.0) and supports both GPU and CPU on Windows. MacOSX is only supported on the CPU.
+The code is written in Python 3 (>= 3.9.0) and supports both GPU and CPU on Windows. MacOS is only supported on the CPU.
 
 1. Clone the Git repository.
 2. Install a compatible version of Python and make an environment.
