@@ -65,7 +65,7 @@ def main():
         
         for args.ratio in [0, 0.1, 0.3, 0.5, 0.7, 0.9, 1]:
             print(args)
-            print(f'====================== run: {seed} ======================')
+            print(f'====================== run: {seed} & ratio: {args.ratio} ======================')
             
             set_seed(seed)
             torch_geometric.seed_everything(seed)
@@ -88,7 +88,6 @@ def main():
                 optimizer = optim.Adam(model.parameters(), lr = args.lr)
             
             for epoch in range(1, args.epochs + 1):
-                print(f'=== epoch {epoch}')
                 
                 if args.ratio == 0:
                     train(model, device, train_loader, criterion, optimizer)
@@ -115,10 +114,12 @@ def main():
                     
                     best_epoch = epoch
                     model_params = deepcopy(model.state_dict())
-
-                print(f'train loss: {train_loss:.4f}, train auc: {train_auc*100:.2f}')
-                print(f'val loss: {val_loss:.4f}, val auc: {val_auc*100:.2f}')
-                print(f'test loss: {test_loss:.4f}, test auc: {test_auc*100:.2f}')
+                
+                if epoch % 10 == 0:
+                    print(f'=== epoch {epoch}')
+                    print(f'train loss: {train_loss:.4f}, train auc: {train_auc*100:.2f}')
+                    print(f'val loss: {val_loss:.4f}, val auc: {val_auc*100:.2f}')
+                    print(f'test loss: {test_loss:.4f}, test auc: {test_auc*100:.2f}')
             
             auc_vals_per_ratio.append(best_val_auc)
             auc_tests_per_ratio.append(final_test_auc)

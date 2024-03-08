@@ -49,7 +49,7 @@ python main.py --dataset=bbbp --train_type=aa
 
 If you want to add a virtual node,
 ```python 
-python main.py --virtual=True --dataset=bbbp -train_type=aais --ratio=0.5
+python main.py --virtual=True --dataset=bbbp --train_type=aais --ratio=0.5
 ```
 
 If you have a problem with DataLoader, 
@@ -93,3 +93,11 @@ This procedure may be time-consuming, especially in HIV, TOX21, and TOXCAST data
 - main_tuned.py: script for training with subsampling ratio tuning
 - requirements.txt, requirements-window-cuda.txt: dependencies for this repository
 - aais_example.ipynb: tutorial for implementation AAIS on colab
+
+
+## Tutorial
+We provide a tutorial conducted in the Google Colab environment: [link](https://colab.research.google.com/drive/1ePTpkQdWiHQotlXLagbAwbeVVEjRn2BI?usp=sharing)
+
+The tutorial can be divided into three main parts: importing necessary data and models for training, calculating the one-step influence function, and implementing the overall algorithm of our method.
+
+A copy of the Colab page is uploaded to the repository as the [aais_example.ipynb](https://github.com/ok69531/AAIS-public/blob/main/aais_example.ipynb) file.
